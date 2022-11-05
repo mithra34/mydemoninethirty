@@ -1,0 +1,137 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+{% if category %}
+ {{category.description|truncatewords:150}}
+{% else %}
+   Welcome....
+{% endif %}
+{% endblock %}
+{% block title %}
+{% if category %}
+   {{category.name}}-Happy shopping
+{% else %}
+   Nine Thirty-Never Late
+{% endif %}
+{% endblock %}
+{% block content %}
+
+ {% if category %}
+
+<div>
+    <div class="row my_row_class">
+        <div class="mx-auto">
+        <p><a href="{% url 'shopapp:allProdCat' %}">Our product collections</a></p>
+    </div>
+        </div>
+</div>
+{% endif %}
+<div class="mx_auto">
+    {% if category %}
+    <img  class="my_image" src="{{category.image.url}}" alt="{{category.name}}">
+</div>
+<br>
+<div>
+    <h1 class="text-center ">{{category.name}}</h1>
+    <p class="text-justify">{{category.description}}</p>
+</div>
+     {% else %}
+<div>
+     <img class="my_image my_image_padding"  src="{% static 'img/banner.jpg' %}" alt="our products" >
+</div>
+<br>
+<br>
+<br>
+<div>
+  <h5 class="text-center my-title ">Best Quality Products</h5>
+        <br>
+
+    <span class="solid1"></span>
+    <br>
+<br>
+<br>
+    <div class="">
+    <h1 style="text-align:center;">We Print What You Want!</h1>
+        </div>
+    <br>
+    <br>
+
+
+
+    <div class="my_container">
+    <a href="{% url 'shopapp:allProdCat' %}"><button class="btn"><span class="btn-txt">SHOP NOW <i class="fa fa-angle-right" aria-hidden="true"></i></span></button></a>
+    </div>
+</div>
+{% endif %}
+<br>
+
+<div class="row">
+    <div class="col-sm-4">
+        <img src="{%static 'img/1.jpg' %}">
+        <p style="text-align:center;">Most Loved Designs</p>
+        <h5 style="text-align:center;">Round Neck T-Shirts</h5>
+    </div>
+    <div class="col-sm-4">
+         <br>
+        <p style="text-align:center;">Design of the Week</p>
+        <h5 style="text-align:center;">Pull Over T-Shirt</h5>
+         <img src="{%static 'img/2.jpg' %}">
+
+</div>
+    <div class="col-sm-4">
+         <img src="{%static 'img/3.jpg' %}">
+        <p style="text-align:center;">New T-shirt Edition</p>
+        <h5 style="text-align:center;">Rockband Series</h5>
+    </div>
+</div>
+<br>
+
+<div>
+    <h4 style="text-align:center;">Our Featured Products</h4><br>
+    <span class="solid1"></span>
+    <br>
+        <div class="row">
+
+        <div class="row mx_auto">
+       {% for product in products %}
+         <div class="col-sm-3">
+            <div class="card text-center" style="min-width:18rem;">
+                <a  href="{{product.get_url}}"><img class="card-img-top my_image" src="{{product.image.url}}" alt="{{product.name}}" ></a>
+
+                <div class="card-body">
+                   <h4> {{product.name}}</h4>
+                    <p> ${{product.price}}</p>
+                </div>
+            </div>
+        </div>
+            {% endfor %}
+
+    </div>
+</div>
+
+</div>
+
+
+
+<div class="container1" style="background-image: url({% static 'img/back.jpg' %});">
+    <div class="background_overlay">
+
+    </div>
+    <h1>15% off</h1>
+</div>
+
+<br>
+<div>
+ <h5 class="text-center my-title " style="line-height: 1.4;"><b>Look Book</b></h5>
+        <br>
+
+    <span class="solid1"></span>
+
+</div>
+
+
+<br>
+<br>
+<br>
+{% endblock %}

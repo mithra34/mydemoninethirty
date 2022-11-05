@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+
+{% endblock %}
+{% block title %}
+   Cart-SmartShop
+{% endblock %}
+{% block content %}
+{% if not cart_items %}
+      <div>
+          <div class="text-center">
+              <br>
+
+               <br>
+
+          </div>
+      </div>
+ {% else %}
+<div class="container-table">
+
+<form action="login" method="POST">
+    {% csrf_token %}
+    <table class="table">
+  <thead class="thead-light">
+    <tr>
+           <th>&nbsp;</th>
+           <th>&nbsp;</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+    </tr>
+  </thead>
+         {% for cart_item in cart_items %}
+        <tr>
+            <td><a href="" >x</a></td>
+            <td><a href="{{cart_item.product.get_url}}"><img src="{{cart_item.product.image.url}}" alt=""  style="width:100px;height:100px;" class="float-left rounded custom_image"></a></td>
+            <td><a href="{{cart_item.product.get_url}}" style="color:orange;text-decoration:underline;"><b>{{cart_item.product.name}}</b></a></td>
+            <td>${{cart_item.product.price}}</td>
+            <td>{{cart_item.quantity}}</td>
+            <td> ${{cart_item.sub_total}}</td>
+
+        </tr>
+  {% endfor %}
+    </table>
+</form>
+</div>
+<div class="row">
+    <div class="col-lg">
+
+    </div>
+    <br>
+<div class="col-lg">
+<table class="table">
+
+  <thead class="thead-light">
+<th>
+    Cart Total
+
+</th>
+  <th>
+
+  </th>
+  <th>
+
+  </th>
+    <th>
+
+  </th>
+  </thead>
+
+
+  </thead>
+  <tbody>
+
+    <tr>
+      <td><b> Sub Total</b></td>
+        <td>${{ total }}</td>
+    </tr>
+    <tr>
+    <td> <b>Total</b></td>
+        <td>${{ total }}</td>
+        </tr>
+
+
+<tr>
+    <td> <a href="{% url 'shopapp:allProdCat' %}" class="btn btn-info btn-block my_custom_table">PROCEED TO CHECKOUT</a></td>
+</tr>
+
+  </tbody>
+
+</table>
+
+<br>
+    <br>
+{% endif %}
+
+{% endblock %}

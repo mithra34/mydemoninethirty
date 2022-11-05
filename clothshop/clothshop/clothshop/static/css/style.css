@@ -1,0 +1,249 @@
+/**
+ * Images a now responsive
+ */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+
+
+/**
+ * Limit the container in
+ * width for big screens
+ */
+.container {
+	width: 2000px;
+	max-width: 100%;
+	padding: 20px;
+	margin: 0 auto;
+}
+.my_container {
+
+ border: 5px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.btn{
+    background-color: #FF7A01;
+    border-radius: 5px;
+    padding-top: 13px;
+    padding-right: 40px;
+    padding-bottom: 13px;
+    padding-left: 40px;
+    color:white;
+
+    }
+   .white{
+     border-color: white;
+   }
+ .btn-txt
+ {
+    text-decoration:inherit;
+    font-weight: 50;
+
+
+    display: inline-block;
+ }
+.image-overlay
+{
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+.main-header .container {
+
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.color-orange
+color:orange;
+}
+.header {
+  width: 100%;
+  padding:40px 0;
+  text-align: center;
+  background: orange;
+  color: white;
+}
+.bloc1, .bloc2
+{
+    display:inline;
+}
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 300px;
+}
+
+
+
+
+.solid{
+  border:none;
+  border-top: 3px solid;
+  width: 10%;
+  margin: 0 auto;
+  color: #FF7A01;
+  position:absolute;
+
+  left:45%;
+  top:60%;
+  }
+.solid1{
+  border:none;
+  border-top: 3px solid;
+  width: 10%;
+  margin: 0 auto;
+  color: #FF7A01;
+  position:absolute;
+  left:45%;
+}
+
+
+.p1{
+position:absolute;
+ left:28%;
+  top:60%;
+
+}
+ul {
+  list-style: none;
+  margin:0px;
+  padding:0px;
+}
+
+li:before{
+   font-family: "Font Awesome 5 Free";
+
+        display: inline-block;
+
+        vertical-align: middle;
+        font-weight: 900;
+}
+
+.list_item{
+position:relative;
+}
+.middle{
+position:absolute;
+ left:28%;
+  top:0%;
+
+}
+
+.my_text{
+
+   padding:10px;
+
+}
+
+.shop-button{
+  padding: 14px 40px;
+  display: inline-block;
+  font-size: 16px;
+
+
+}
+.main-nav ul {
+
+	text-align: center;
+}
+.main-nav li{
+
+
+	display: inline-flex;
+	position:relative;
+
+}
+.main-nav a {
+	display: inline-block;
+	padding: .25em .5em;
+}
+.mh-logo
+{
+align:left;
+}
+.contact{
+
+}
+.cart-container{
+text-align:center;
+position:relative;
+}
+
+
+.no-outline:focus {
+  outline: none;
+}
+
+
+.footer {
+
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   padding:100px;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+.box{
+margin:0px 0px 0px 0px;
+padding:32px 32px 32px 32px;
+}
+.container1{
+
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width:800px;
+    padding: 160px 100px 160px 100px;
+    position: relative;
+}
+
+.background_overlay
+{   opacity: 0.15;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+
+
+}
+.back-overlay{
+Display: grid;
+
+Grid-template-columns: repeat(12, 1fr);
+
+Position: relative;
+}
+
+
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content img {
+    width: 35%;
+    min-width: 100px;
+}
+
+.img:hover {
+    flex: 5;
+}
+
+

@@ -1,0 +1,49 @@
+
+{% load static %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<header class="main-header">
+	<div class="container">
+		<h1 class="mh-logo">
+			<a href="{% url 'shopapp:allProdCat' %}"></a>	<img  align="left" src="{% static 'img/logo.png' %}"  alt="logo">
+		</h1>
+		<nav class="main-nav">
+			<ul class="main-nav-list">
+				<li>
+					<a href="{% url 'shopapp:home' %}">HOME</a>
+				</li>
+				<li>
+					<a href="{% url 'shopapp:allProdCat' %}">ALL PRODUCTS</a>
+				</li>
+				<li>
+					<a href="{% url 'shopapp:about' %}">ABOUT</a>
+				</li>
+
+				<li>
+					<a href="{% url 'shopapp:contact' %}">CONTACT</a>
+				</li>
+
+				<li class="nav-item dropdown  ">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">ACCOUNT</a>
+                    <div class="dropdown-menu  ">
+				      <a class="dropdown-item " href="{% url 'shopapp:login' %}">MY ACCOUNT</a>
+                       <a class="dropdown-item " href="{% url 'cartapp:cart_detail'  %} ">MY CART</a>
+					</div>
+				</li>
+
+             <li>
+
+			<span class="cart-container	"><a class="dropdown_item" href="{% url 'cartapp:cart_detail'  %}"> <img  src="{% static 'img/bag3.jpeg'  %}">{{item_count}}</a></span>
+           </li>
+
+
+			</ul>
+		</nav>
+	</div>
+
+	<script src="{% static 'js/popper.min.js' %}" ></script>
+ <script src="{% static 'js/bootstrap.min.js' %}" ></script>
+</header>
